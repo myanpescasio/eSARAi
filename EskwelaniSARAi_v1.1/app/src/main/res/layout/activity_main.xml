@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightColor"
+    android:orientation="vertical"
+    android:padding="40dp"
+    tools:context="com.example.myka.eskwelanisarai.MainActivity">
+
+    <ImageView
+        android:id="@+id/sarai_logo"
+        android:layout_width="176dp"
+        android:layout_height="176dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/sarai" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sarai_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="64dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="arial"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:text="Eskwela ni SARAi"
+            android:textColor="@color/primaryColorDark"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:background="@color/primaryColor"
+            android:onClick="redirectLogin"
+            android:text="Log In"
+            android:textAllCaps="true"
+            android:textColor="#E8F5E9" />
+
+        <Button
+            android:id="@+id/guest"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:background="@color/primaryColor"
+            android:onClick="redirectGuestHome"
+            android:text="Continue as Guest"
+            android:textAllCaps="true"
+            android:textColor="#E8F5E9" />
+    </LinearLayout>
+
+</RelativeLayout>

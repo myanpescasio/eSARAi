@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightColor"
+    android:padding="40dp"
+    tools:context="com.example.myka.eskwelanisarai.LoginActivity">
+
+    <ImageView
+        android:id="@+id/sarai_logo"
+        android:layout_width="176dp"
+        android:layout_height="176dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/sarai" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sarai_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="arial"
+            android:paddingLeft="88dp"
+            android:paddingRight="88dp"
+            android:text="Log In"
+            android:textColor="@color/primaryColorDark"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/edit_text_style"
+            android:fontFamily="arial"
+            android:gravity="center"
+            android:hint="Username"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_style"
+            android:ems="10"
+            android:fontFamily="arial"
+            android:gravity="center"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/enter_app"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_margin="8dp"
+            android:background="@color/primaryColor"
+            android:text="Continue"
+            android:textAllCaps="true"
+            android:textColor="#E8F5E9"
+            android:onClick="redirectLoginHome"/>
+    </LinearLayout>
+
+</RelativeLayout>
