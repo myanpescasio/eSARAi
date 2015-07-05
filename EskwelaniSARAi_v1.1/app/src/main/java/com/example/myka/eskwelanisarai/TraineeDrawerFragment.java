@@ -5,16 +5,25 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class TraineeDrawerFragment extends Fragment {
+
+    private RecyclerView recyclerView;
+    //This is an adapter
+    private CustomDrawerAdapter adapter;
 
     public static final String PRE_FILE_NAME = "testpref";
     public static final String KEY_USER_LEARNED_DRAWER = "user_learned_drawer";
@@ -46,7 +55,28 @@ public class TraineeDrawerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View layout = inflater.inflate(R.layout.fragment_trainee_drawer, container, false);
+        recyclerView = (RecyclerView) layout.findViewById(R.id.trainee_drawer_list);
+
+        //Displaying data on the navigation
+        adapter = new CustomDrawerAdapter(getActivity(), getTraineeData());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         return layout;
+    }
+
+    //Getting data for the adapter
+    public static List<CustomDrawerItem> getTraineeData () {
+        List<CustomDrawerItem> data = new ArrayList<>();
+        int[] icons = {R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp};
+        String[] titles = {"HOME", "TRENDING", "NEW", "QUIZZES", "MY COURSES", "SETTINGS", "CONTACT US", "LOG OUT"};
+
+        for (int i=0; i<titles.length && i<icons.length; i++) {
+            CustomDrawerItem current = new CustomDrawerItem();
+            current.iconId = icons[i];
+            current.title = titles[i];
+            data.add(current);
+        }
+        return data;
     }
 
     public void setUp (int fragmentId, DrawerLayout drawerLayout, final Toolbar toolbar) {

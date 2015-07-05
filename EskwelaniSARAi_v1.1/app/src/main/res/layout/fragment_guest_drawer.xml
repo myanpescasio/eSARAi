@@ -6,14 +6,28 @@
     android:background="@color/lightColor">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/guest_text"
+    <RelativeLayout
+        android:id="@+id/guest_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Guest"
-        android:textSize="24sp"
-        android:textAllCaps="true"/>
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guest Logged In"
+            android:textSize="24sp"
+            android:padding="32dp"
+            android:textColor="@color/lightColor"
+            android:textAllCaps="true"/>
+    </RelativeLayout>
 
 
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/guest_container"
+        android:id="@+id/guest_drawer_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>
