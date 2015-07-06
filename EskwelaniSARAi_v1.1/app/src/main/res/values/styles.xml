@@ -18,6 +18,7 @@
         <!-- Customize your theme here. -->
         <item name="android:textColorPrimary">@color/lightColor</item>
         <item name="android:textColorSecondary">@color/lightColor</item>
+
     </style>
 
 </resources>

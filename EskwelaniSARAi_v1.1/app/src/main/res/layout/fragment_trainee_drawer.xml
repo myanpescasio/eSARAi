@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myka.eskwelanisarai.TraineeDrawerFragment"
-    android:background="@color/lightColor">
+    android:background="@color/lightColor"
+    tools:context="com.example.myka.eskwelanisarai.TraineeDrawerFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
@@ -21,10 +21,9 @@
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:layout_below="@id/trainee_container"
         android:id="@+id/trainee_drawer_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trainee_container"></android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

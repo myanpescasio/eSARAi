@@ -5,4 +5,5 @@
     <color name="accentColor">#FDD835</color>
     <color name="lightColor">#E8F5E9</color>
     <color name="drawerColor">#C8E6C9</color>
+    <color name="lightGray">#E0E0E0</color>
 </resources>

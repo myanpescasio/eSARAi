@@ -67,8 +67,8 @@ public class TraineeDrawerFragment extends Fragment {
     //Getting data for the adapter
     public static List<CustomDrawerItem> getTraineeData () {
         List<CustomDrawerItem> data = new ArrayList<>();
-        int[] icons = {R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp};
-        String[] titles = {"HOME", "TRENDING", "NEW", "QUIZZES", "MY COURSES", "SETTINGS", "CONTACT US", "LOG OUT"};
+        int[] icons = {R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp};
+        String[] titles = {"HOME", "TRENDING", "NEW", "MY COURSES", "SETTINGS", "CONTACT US", "LOG OUT"};
 
         for (int i=0; i<titles.length && i<icons.length; i++) {
             CustomDrawerItem current = new CustomDrawerItem();

@@ -68,8 +68,8 @@ public class GuestDrawerFragment extends Fragment {
     //Getting data for the adapter
     public static List<CustomDrawerItem> getGuestData () {
         List<CustomDrawerItem> data = new ArrayList<>();
-        int[] icons = {R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp};
-        String[] titles = {"HOME", "TRENDING", "NEW", "QUIZZES", "CONTACT US", "LOG IN"};
+        int[] icons = {R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp};
+        String[] titles = {"HOME", "TRENDING", "NEW", "CONTACT US", "LOG IN"};
 
         for (int i=0; i<titles.length && i<icons.length; i++) {
             CustomDrawerItem current = new CustomDrawerItem();

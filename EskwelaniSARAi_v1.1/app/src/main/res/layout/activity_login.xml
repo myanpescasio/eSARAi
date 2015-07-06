@@ -75,10 +75,10 @@
             android:layout_height="36dp"
             android:layout_margin="8dp"
             android:background="@color/primaryColor"
+            android:onClick="redirectLoginHome"
             android:text="Continue"
             android:textAllCaps="true"
-            android:textColor="#E8F5E9"
-            android:onClick="redirectLoginHome"/>
+            android:textColor="#E8F5E9" />
     </LinearLayout>
 
 </RelativeLayout>
