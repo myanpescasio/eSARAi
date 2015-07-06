@@ -18,7 +18,7 @@
         <!-- Customize your theme here. -->
         <item name="android:textColorPrimary">@color/lightColor</item>
         <item name="android:textColorSecondary">@color/lightColor</item>
-
+        <item name="android:textSize">@dimen/app_bar_text</item>
     </style>
 
 </resources>

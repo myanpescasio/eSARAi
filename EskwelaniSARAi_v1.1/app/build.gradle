@@ -26,3 +26,5 @@ dependencies {
     //Used for checking if the app follows the specs (Dspecs)
     compile 'org.lucasr.dspec:dspec:0.1.1'
 }
+
+/* Slidenerd's videos from youtube was the reference for most of Material Designs Theme used in this application. */

@@ -19,6 +19,8 @@ public class CustomDrawerAdapter extends RecyclerView.Adapter<CustomDrawerAdapte
     List<CustomDrawerItem> data = Collections.emptyList();
     private LayoutInflater inflater;
 
+    private ClickListener clickListener;
+
     public CustomDrawerAdapter (Context context, List<CustomDrawerItem> data) {
         inflater = LayoutInflater.from(context);
         this.data = data;
@@ -38,20 +40,36 @@ public class CustomDrawerAdapter extends RecyclerView.Adapter<CustomDrawerAdapte
         holder.icon.setImageResource(current.iconId);
     }
 
+    public void setClickListener (ClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
     @Override
     public int getItemCount() {
         return data.size();
     }
 
-    class DrawerViewHolder extends RecyclerView.ViewHolder{
+    class DrawerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView title;
         ImageView icon;
 
         public DrawerViewHolder(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             title = (TextView) itemView.findViewById(R.id.drawer_item_text);
             icon = (ImageView) itemView.findViewById(R.id.drawer_item_icon);
         }
+
+        @Override
+        public void onClick(View v) {
+            if (clickListener != null) {
+                clickListener.itemClick(v, getPosition());
+            }
+        }
+    }
+
+    public interface ClickListener {
+        public void itemClick (View view, int position);
     }
 }

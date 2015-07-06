@@ -40,6 +40,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.myka.eskwelanisarai.LoginActivity" />
         </activity>
+        <activity
+            android:name=".GuestTrendingActivity"
+            android:label="@string/title_activity_guest_trending"
+            android:parentActivityName=".GuestHomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myka.eskwelanisarai.GuestHomeActivity" />
+        </activity>
+        <activity
+            android:name=".TraineeTrendingActivity"
+            android:label="@string/title_activity_trainee_trending"
+            android:parentActivityName=".TraineeHomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myka.eskwelanisarai.TraineeHomeActivity" />
+        </activity>
     </application>
 
 </manifest>
+
+<!-- Slidenerd's videos from youtube was the reference for most of Material Designs Theme used in this application. -->

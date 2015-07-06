@@ -1,6 +1,7 @@
 package com.example.myka.eskwelanisarai;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -19,7 +20,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class GuestDrawerFragment extends Fragment {
+public class GuestDrawerFragment extends Fragment implements CustomDrawerAdapter.ClickListener{
 
     private RecyclerView recyclerView;
     //This is an adapter
@@ -59,6 +60,7 @@ public class GuestDrawerFragment extends Fragment {
 
         //Displaying data on the navigation
         adapter = new CustomDrawerAdapter(getActivity(), getGuestData());
+        adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -115,6 +117,11 @@ public class GuestDrawerFragment extends Fragment {
                 mDrawerToggle.syncState();
             }
         });
+    }
+
+    @Override
+    public void itemClick(View view, int position) {
+        startActivity(new Intent(getActivity(), GuestTrendingActivity.class));
     }
 
 
