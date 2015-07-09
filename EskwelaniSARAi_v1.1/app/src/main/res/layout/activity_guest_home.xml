@@ -13,7 +13,6 @@
         tools:context="com.example.myka.eskwelanisarai.GuestHomeActivity">
 
         <include
-            android:id="@+id/home_template"
             layout="@layout/home_template" />
 
     </RelativeLayout>

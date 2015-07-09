@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/trending_bar">
+    android:id="@+id/trending_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <View
         android:layout_width="fill_parent"
@@ -11,7 +12,7 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
@@ -19,20 +20,35 @@
             android:padding="16dp"
             android:text="Trending"
             android:textAllCaps="true"
-            android:textStyle="bold"
-            android:textColor="@color/primaryColor" />
+            android:textColor="@color/primaryColor"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:id="@+id/trending_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true">
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
 
-            <include layout="@layout/view_more"/>
-            
+            <Button
+                android:id="@+id/view_more_trending"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="View More"
+                android:textSize="8sp"
+                android:textColor="@color/lightColor"
+                android:background="@color/primaryColor"
+                android:layout_marginRight="8dp"
+                android:onClick="redirectTrending"/>
+
         </LinearLayout>
 
     </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/trending_courses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
 
 
 </LinearLayout>

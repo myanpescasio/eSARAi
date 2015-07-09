@@ -1,15 +1,27 @@
 package com.example.myka.eskwelanisarai;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class GuestHomeActivity extends ActionBarActivity {
+
+    private RecyclerView tRecycler;
+    private CourseItemAdapter tAdapter;
+
+    private RecyclerView nRecycler;
+    private CourseItemAdapter nAdapter;
 
     private Toolbar toolbar;
     @Override
@@ -24,6 +36,50 @@ public class GuestHomeActivity extends ActionBarActivity {
                 getSupportFragmentManager().findFragmentById(R.id.fragment_guest_drawer);
         drawerFragment.setUp(R.id.fragment_guest_drawer, (DrawerLayout) findViewById(R.id.guest_drawer_layout), toolbar);
 
+
+        tRecycler = (RecyclerView) findViewById(R.id.trending_courses);
+        tRecycler.setHasFixedSize(true);
+        LinearLayoutManager tLinearLayout = new LinearLayoutManager(this);
+        tLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        tRecycler.setLayoutManager(tLinearLayout);
+        tAdapter = new CourseItemAdapter(this, getTrendingCourseData());
+        tRecycler.setAdapter(tAdapter);
+
+        nRecycler = (RecyclerView) findViewById(R.id.new_courses);
+        nRecycler.setHasFixedSize(true);
+        LinearLayoutManager nLinearLayout = new LinearLayoutManager(this);
+        nLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        nRecycler.setLayoutManager(nLinearLayout);
+        nAdapter = new CourseItemAdapter(this, getNewCourseData());
+        nRecycler.setAdapter(nAdapter);
+    }
+
+    private List<CourseItem> getNewCourseData() {
+        List<CourseItem> data = new ArrayList<>();
+        int[] icons = {R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm};
+        String[] titles = {"Topic 5", "Topic 4", "Topic 3", "Topic 2", "Topic 1"};
+
+        for (int i=0; i<titles.length && i<icons.length; i++) {
+            CourseItem current = new CourseItem();
+            current.imageId = icons[i];
+            current.courseTitle = titles[i];
+            data.add(current);
+        }
+        return data;
+    }
+
+    private List<CourseItem> getTrendingCourseData() {
+        List<CourseItem> data = new ArrayList<>();
+        int[] icons = {R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm};
+        String[] titles = {"Topic 1", "Topic 2", "Topic 3", "Topic 4", "Topic 5"};
+
+        for (int i=0; i<titles.length && i<icons.length; i++) {
+            CourseItem current = new CourseItem();
+            current.imageId = icons[i];
+            current.courseTitle = titles[i];
+            data.add(current);
+        }
+        return data;
     }
 
     @Override
@@ -47,5 +103,10 @@ public class GuestHomeActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void redirectTrending(View view){
+        Intent guestTrending = new Intent(this, GuestTrendingActivity.class);
+        startActivity(guestTrending);
     }
 }

@@ -13,4 +13,7 @@
     <string name="title_activity_trainee_home">@string/title_activity_main</string>
     <string name="title_activity_guest_trending">@string/title_activity_main</string>
     <string name="title_activity_trainee_trending">TraineeTrendingActivity</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
