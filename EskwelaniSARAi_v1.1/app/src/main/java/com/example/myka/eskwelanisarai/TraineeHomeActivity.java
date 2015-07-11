@@ -56,7 +56,7 @@ public class TraineeHomeActivity extends ActionBarActivity {
     private List<CourseItem> getNewCourseData() {
         List<CourseItem> data = new ArrayList<>();
         int[] icons = {R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm};
-        String[] titles = {"Topic 5", "Topic 4", "Topic 3", "Topic 2", "Topic 1"};
+        String[] titles = {"Land Preparation", "Corn Foraging", "Corn Diseases", "Corn Pest", "Corn Processing"};
 
         for (int i=0; i<titles.length && i<icons.length; i++) {
             CourseItem current = new CourseItem();
@@ -70,7 +70,7 @@ public class TraineeHomeActivity extends ActionBarActivity {
     private List<CourseItem> getTrendingCourseData() {
         List<CourseItem> data = new ArrayList<>();
         int[] icons = {R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm};
-        String[] titles = {"Topic 1", "Topic 2", "Topic 3", "Topic 4", "Topic 5"};
+        String[] titles = {"Corn Processing", "Corn Pest", "Corn Diseases", "Corn Foraging", "Land Preparation"};
 
         for (int i=0; i<titles.length && i<icons.length; i++) {
             CourseItem current = new CourseItem();

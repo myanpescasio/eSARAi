@@ -120,7 +120,33 @@ public class TraineeDrawerFragment extends Fragment implements CustomDrawerAdapt
 
     @Override
     public void itemClick(View view, int position) {
-        startActivity(new Intent(getActivity(), TraineeTrendingActivity.class));
+        //Home
+        if(position == 0){
+            startActivity(new Intent(getActivity(), TraineeHomeActivity.class));
+        }
+        //Trending
+        else if(position == 1){
+            startActivity(new Intent(getActivity(), TraineeTrendingActivity.class));
+        }
+        //New
+        else if(position == 2){
+            //New
+        }
+        //My Courses
+        else if(position == 3){
+            //My Courses
+        }
+        //Settings
+        else if(position == 4){
+            //Settings
+        }
+        //Contact Us
+        else if(position == 5){
+            //Contact Us
+        }
+        //Log Out
+        else if(position == 6){
+            startActivity(new Intent(getActivity(), MainActivity.class));
+        }
     }
-
 }

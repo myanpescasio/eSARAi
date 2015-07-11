@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_margin="16dp">
+
+        <ImageView
+            android:id="@+id/course_all_image"
+            android:layout_width="120dp"
+            android:layout_height="72dp"
+            android:src="@drawable/smallfarm"/>
+
+        <TextView
+            android:layout_toRightOf="@id/course_all_image"
+            android:id="@+id/course_all_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is the title"
+            android:textSize="16sp"
+            android:layout_marginLeft="8dp"/>
+
+        <TextView
+            android:layout_toRightOf="@id/course_all_image"
+            android:layout_below="@id/course_all_title"
+            android:id="@+id/course_all_shortdesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is the title"
+            android:textSize="12sp"
+            android:layout_marginLeft="8dp"/>
+
+        <TextView
+            android:id="@+id/available_to"
+            android:layout_toRightOf="@id/course_all_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Available to "
+            android:textSize="12sp"
+            android:layout_marginLeft="8dp"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/primaryColor"/>
+
+        <TextView
+            android:layout_toRightOf="@id/available_to"
+            android:id="@+id/course_all_availuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Myka Ganda"
+            android:textSize="12sp"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/primaryColor"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@color/lightGray" />
+</LinearLayout>

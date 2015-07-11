@@ -3,12 +3,20 @@ package com.example.myka.eskwelanisarai;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class TraineeTrendingActivity extends ActionBarActivity {
+
+    private RecyclerView tRecycler;
+    private CourseItemAllAdapter tAdapter;
 
     private Toolbar toolbar;
     @Override
@@ -22,6 +30,37 @@ public class TraineeTrendingActivity extends ActionBarActivity {
         TraineeDrawerFragment drawerFragment = (TraineeDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_trainee_drawer);
         drawerFragment.setUp(R.id.fragment_trainee_drawer, (DrawerLayout) findViewById(R.id.trainee_drawer_layout), toolbar);
+
+        tRecycler = (RecyclerView) findViewById(R.id.trending_courses_all);
+        tRecycler.setHasFixedSize(true);
+        LinearLayoutManager tLinearLayout = new LinearLayoutManager(this);
+        tLinearLayout.setOrientation(LinearLayoutManager.VERTICAL);
+        tRecycler.setLayoutManager(tLinearLayout);
+        tAdapter = new CourseItemAllAdapter(this, getCourseData());
+        tRecycler.setAdapter(tAdapter);
+    }
+
+    private List<CourseItemAll> getCourseData() {
+        List<CourseItemAll> data = new ArrayList<>();
+        int[] icons = {R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm};
+        String[] titles = {"Corn Processing", "Corn Pest", "Corn Diseases", "Corn Foraging", "Land Preparation", "Corn Stages"};
+        String[] sDescription = {"This module discusses corn and its co-product processing.",
+                "This module discusses corn pests and their management.",
+                "This module discusses corn diseases and their management.",
+                "This module discusses corn foraging.",
+                "This module discusses land preparation for corn planting.",
+                "This module discusses stages of corn plant development."};
+        String[] user = {"all", "all", "all", "registered user", "registered user", "all"};
+
+        for (int i=0; i<titles.length && i<icons.length; i++) {
+            CourseItemAll current = new CourseItemAll();
+            current.imageId = icons[i];
+            current.courseTitle = titles[i];
+            current.shortDescription = sDescription[i];
+            current.userAvailability = user[i];
+            data.add(current);
+        }
+        return data;
     }
 
     @Override

@@ -121,7 +121,27 @@ public class GuestDrawerFragment extends Fragment implements CustomDrawerAdapter
 
     @Override
     public void itemClick(View view, int position) {
-        startActivity(new Intent(getActivity(), GuestTrendingActivity.class));
+
+        //Home
+        if(position == 0){
+            startActivity(new Intent(getActivity(), GuestHomeActivity.class));
+        }
+        //Trending
+        else if(position == 1){
+            startActivity(new Intent(getActivity(), GuestTrendingActivity.class));
+        }
+        //New
+        else if(position == 2){
+            //New
+        }
+        //Contact Us
+        else if(position == 3){
+            //Contact Us
+        }
+        //Log In
+        else if(position == 4){
+            startActivity(new Intent(getActivity(), LoginActivity.class));
+        }
     }
 
 

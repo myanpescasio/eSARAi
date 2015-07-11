@@ -56,8 +56,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.myka.eskwelanisarai.TraineeHomeActivity" />
         </activity>
+        <activity
+            android:name=".TraineeCourseTraceActivity"
+            android:label="@string/title_activity_trainee_course_trace"
+            android:parentActivityName=".TraineeHomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myka.eskwelanisarai.TraineeHomeActivity" />
+        </activity>
+        <activity
+            android:name=".TraineeCourseTrackActivity"
+            android:label="@string/title_activity_trainee_course_track"
+            android:parentActivityName=".TraineeHomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myka.eskwelanisarai.TraineeHomeActivity" />
+        </activity>
     </application>
 
-</manifest>
-
-<!-- Slidenerd's videos from youtube was the reference for most of Material Designs Theme used in this application. -->
+</manifest> <!-- Slidenerd's videos from youtube was the reference for most of Material Designs Theme used in this application. -->
