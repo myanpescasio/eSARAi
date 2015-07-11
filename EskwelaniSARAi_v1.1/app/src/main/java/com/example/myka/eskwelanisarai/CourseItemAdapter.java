@@ -19,10 +19,18 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
     List<CourseItem> data = Collections.emptyList();
     private LayoutInflater inflater;
 
+    private ClickListener clickListener;
+
     public CourseItemAdapter (Context context, List<CourseItem> data) {
         inflater = LayoutInflater.from(context);
         this.data = data;
     }
+
+
+    public void setClickListener (ClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
 
     @Override
     public CourseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -43,16 +51,27 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
         return data.size();
     }
 
-    public class CourseViewHolder extends RecyclerView.ViewHolder{
+    public class CourseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView title;
         ImageView screenshot;
 
         public CourseViewHolder(View itemView) {
             super(itemView);
-
+            itemView.setOnClickListener(this);
             title = (TextView) itemView.findViewById(R.id.course_title);
             screenshot = (ImageView) itemView.findViewById(R.id.course_screenshot);
         }
+
+        @Override
+        public void onClick(View v) {
+            if (clickListener != null) {
+                clickListener.itemClick(v, getPosition());
+            }
+        }
+    }
+
+    public interface ClickListener {
+        public void itemClick (View view, int position);
     }
 }

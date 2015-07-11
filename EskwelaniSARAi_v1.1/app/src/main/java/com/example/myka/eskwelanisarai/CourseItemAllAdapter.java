@@ -19,6 +19,8 @@ public class CourseItemAllAdapter extends RecyclerView.Adapter<CourseItemAllAdap
     List<CourseItemAll> data = Collections.emptyList();
     private LayoutInflater inflater;
 
+
+
     public CourseItemAllAdapter (Context context, List<CourseItemAll> data) {
         inflater = LayoutInflater.from(context);
         this.data = data;

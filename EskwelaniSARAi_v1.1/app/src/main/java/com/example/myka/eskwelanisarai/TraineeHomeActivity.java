@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class TraineeHomeActivity extends ActionBarActivity {
+public class TraineeHomeActivity extends ActionBarActivity implements CourseItemAdapter.ClickListener{
 
     private RecyclerView tRecycler;
     private CourseItemAdapter tAdapter;
@@ -42,6 +42,7 @@ public class TraineeHomeActivity extends ActionBarActivity {
         tLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         tRecycler.setLayoutManager(tLinearLayout);
         tAdapter = new CourseItemAdapter(this, getTrendingCourseData());
+        tAdapter.setClickListener(this);
         tRecycler.setAdapter(tAdapter);
 
         nRecycler = (RecyclerView) findViewById(R.id.new_courses);
@@ -106,5 +107,12 @@ public class TraineeHomeActivity extends ActionBarActivity {
     public void redirectTrending(View view){
         Intent traineeTrending = new Intent(this, TraineeTrendingActivity.class);
         startActivity(traineeTrending);
+    }
+
+    @Override
+    public void itemClick(View view, int position) {
+        if(position == 0){
+            startActivity(new Intent(this, TraineeCourseTrackActivity.class));
+        }
     }
 }

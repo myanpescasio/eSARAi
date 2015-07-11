@@ -13,23 +13,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class TraineeCourseTrackActivity extends ActionBarActivity {
+public class GuestCourseTrackActivity extends ActionBarActivity {
 
     private RecyclerView recycler;
     private CourseOutlineItemAdapter adapter;
     private Toolbar toolbar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trainee_course_track);
+        setContentView(R.layout.activity_guest_course_track);
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        TraineeDrawerFragment drawerFragment = (TraineeDrawerFragment)
-                getSupportFragmentManager().findFragmentById(R.id.fragment_trainee_drawer);
-        drawerFragment.setUp(R.id.fragment_trainee_drawer, (DrawerLayout) findViewById(R.id.trainee_drawer_layout), toolbar);
+        GuestDrawerFragment drawerFragment = (GuestDrawerFragment)
+                getSupportFragmentManager().findFragmentById(R.id.fragment_guest_drawer);
+        drawerFragment.setUp(R.id.fragment_guest_drawer, (DrawerLayout) findViewById(R.id.guest_drawer_layout), toolbar);
 
         recycler = (RecyclerView) findViewById(R.id.course_track_outline);
         recycler.setHasFixedSize(true);
@@ -57,7 +56,7 @@ public class TraineeCourseTrackActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_trainee_course_track, menu);
+        getMenuInflater().inflate(R.menu.menu_guest_course_track, menu);
         return false;
     }
 
