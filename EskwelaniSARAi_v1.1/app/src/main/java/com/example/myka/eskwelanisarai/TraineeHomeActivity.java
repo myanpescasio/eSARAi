@@ -1,9 +1,9 @@
 package com.example.myka.eskwelanisarai;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -42,7 +42,7 @@ public class TraineeHomeActivity extends ActionBarActivity implements CourseItem
         tLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         tRecycler.setLayoutManager(tLinearLayout);
         tAdapter = new CourseItemAdapter(this, getTrendingCourseData());
-        tAdapter.setClickListener(this);
+        tAdapter.setClickListenerTrending(this);
         tRecycler.setAdapter(tAdapter);
 
         nRecycler = (RecyclerView) findViewById(R.id.new_courses);
@@ -51,13 +51,14 @@ public class TraineeHomeActivity extends ActionBarActivity implements CourseItem
         nLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         nRecycler.setLayoutManager(nLinearLayout);
         nAdapter = new CourseItemAdapter(this, getNewCourseData());
+        nAdapter.setClickListenerNew(this);
         nRecycler.setAdapter(nAdapter);
     }
 
     private List<CourseItem> getNewCourseData() {
         List<CourseItem> data = new ArrayList<>();
-        int[] icons = {R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm};
-        String[] titles = {"Land Preparation", "Corn Foraging", "Corn Diseases", "Corn Pest", "Corn Processing"};
+        int[] icons = {R.drawable.nodata, R.drawable.nodata, R.drawable.nodata};
+        String[] titles = {"Land Preparation", "Corn Foraging", "Corn Diseases"};
 
         for (int i=0; i<titles.length && i<icons.length; i++) {
             CourseItem current = new CourseItem();
@@ -70,8 +71,8 @@ public class TraineeHomeActivity extends ActionBarActivity implements CourseItem
 
     private List<CourseItem> getTrendingCourseData() {
         List<CourseItem> data = new ArrayList<>();
-        int[] icons = {R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm};
-        String[] titles = {"Corn Processing", "Corn Pest", "Corn Diseases", "Corn Foraging", "Land Preparation"};
+        int[] icons = {R.drawable.cornprocessing, R.drawable.nodata, R.drawable.nodata};
+        String[] titles = {"Corn Processing", "Corn Pest", "Corn Diseases"};
 
         for (int i=0; i<titles.length && i<icons.length; i++) {
             CourseItem current = new CourseItem();
@@ -109,10 +110,25 @@ public class TraineeHomeActivity extends ActionBarActivity implements CourseItem
         startActivity(traineeTrending);
     }
 
+    public void redirectNew(View view){
+        Intent traineeNew = new Intent(this, TraineeNewActivity.class);
+        startActivity(traineeNew);
+    }
+
     @Override
-    public void itemClick(View view, int position) {
+    public void itemClickTrending(View view, int position) {
         if(position == 0){
             startActivity(new Intent(this, TraineeCourseTrackActivity.class));
         }
+        else{
+            startActivity(new Intent(this, TraineeNoDataActivity.class));
+
+            //Toast.makeText(getApplicationContext(), "No Available Data at the Moment!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void itemClickNew(View view, int position) {
+        startActivity(new Intent(this, TraineeNoDataActivity.class));
     }
 }

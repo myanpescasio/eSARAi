@@ -1,19 +1,22 @@
 package com.example.myka.eskwelanisarai;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class TraineeCourseTrackActivity extends ActionBarActivity {
+public class TraineeCourseTrackActivity extends ActionBarActivity implements CourseOutlineItemAdapter.ClickListener{
 
     private RecyclerView recycler;
     private CourseOutlineItemAdapter adapter;
@@ -37,12 +40,13 @@ public class TraineeCourseTrackActivity extends ActionBarActivity {
         linearLayout.setOrientation(LinearLayoutManager.VERTICAL);
         recycler.setLayoutManager(linearLayout);
         adapter = new CourseOutlineItemAdapter(this, getOutlineData());
+        adapter.setClickListener(this);
         recycler.setAdapter(adapter);
     }
 
     private List<CourseOutlineItem> getOutlineData() {
         List<CourseOutlineItem> data = new ArrayList<>();
-        int[] icons = {R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp};
+        int[] icons = {R.drawable.one, R.drawable.question, R.drawable.two, R.drawable.question, R.drawable.three, R.drawable.question, R.drawable.four, R.drawable.question};
         String[] titles = {"Corn Type","Quiz: Corn Types", "Corn Processing: Wet Milling", "Quiz: Wet Milling", "Corn Processing: Dry Milling", "Quiz: Dry Milling", "Nutritional Content of Corn", "Quiz: Nutritional Contents"};
 
         for (int i=0; i<titles.length && i<icons.length; i++) {
@@ -74,5 +78,21 @@ public class TraineeCourseTrackActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void itemClick(View view, int position) {
+
+        if(position == 0){
+            startActivity(new Intent(this, Sample1Activity.class));
+        }
+        else if(position == 1){
+            startActivity(new Intent(this, Sample1QuizActivity.class));
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "No Available Data at the Moment!", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/lightColor"
-        tools:context="com.example.myka.eskwelanisarai.TraineeHomeActivity">
+        tools:context="com.example.myka.eskwelanisarai.TraineeTrendingActivity">
 
         <include
             android:id="@+id/trending_template"

@@ -6,9 +6,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 
 public class LoginActivity extends ActionBarActivity {
+
+    EditText username;
+    EditText password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +44,20 @@ public class LoginActivity extends ActionBarActivity {
 
     public void redirectLoginHome(View view){
         //Set-up redirection
-        Intent login = new Intent(this, TraineeHomeActivity.class);
-        startActivity(login);
-        finish();
+
+        username = (EditText) findViewById(R.id.username);
+        password = (EditText) findViewById(R.id.password);
+
+        if(username.getText().toString().equalsIgnoreCase("tester") && password.getText().toString().equalsIgnoreCase("tester")){
+            Intent login = new Intent(this, TraineeHomeActivity.class);
+            startActivity(login);
+            finish();
+        }
+        else{
+            username.setText("");
+            password.setText("");
+        }
+
+
     }
 }

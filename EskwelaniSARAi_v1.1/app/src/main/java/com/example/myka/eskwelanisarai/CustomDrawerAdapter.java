@@ -64,7 +64,7 @@ public class CustomDrawerAdapter extends RecyclerView.Adapter<CustomDrawerAdapte
         @Override
         public void onClick(View v) {
             if (clickListener != null) {
-                clickListener.itemClick(v, getPosition());
+                clickListener.itemClick(v, getLayoutPosition());
             }
         }
     }

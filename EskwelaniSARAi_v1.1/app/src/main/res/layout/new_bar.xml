@@ -38,7 +38,8 @@
                 android:textSize="8sp"
                 android:textColor="@color/lightColor"
                 android:background="@color/primaryColor"
-                android:layout_marginRight="8dp"/>
+                android:layout_marginRight="8dp"
+                android:onClick="redirectNew"/>
 
         </LinearLayout>
 

@@ -10,6 +10,8 @@ import android.view.View;
 
 public class MainActivity extends ActionBarActivity {
 
+    public static String user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +48,9 @@ public class MainActivity extends ActionBarActivity {
     public void redirectGuestHome(View view){
         Intent guestHome = new Intent(this, GuestHomeActivity.class);
         startActivity(guestHome);
+        user = "guest";
         finish();
+
+
     }
 }

@@ -19,7 +19,8 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
     List<CourseItem> data = Collections.emptyList();
     private LayoutInflater inflater;
 
-    private ClickListener clickListener;
+    private ClickListener clickListenerTrending;
+    private ClickListener clickListenerNew;
 
     public CourseItemAdapter (Context context, List<CourseItem> data) {
         inflater = LayoutInflater.from(context);
@@ -27,8 +28,12 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
     }
 
 
-    public void setClickListener (ClickListener clickListener) {
-        this.clickListener = clickListener;
+    public void setClickListenerTrending (ClickListener clickListenerTrending) {
+        this.clickListenerTrending = clickListenerTrending;
+    }
+
+    public void setClickListenerNew (ClickListener clickListenerNew) {
+        this.clickListenerNew = clickListenerNew;
     }
 
 
@@ -65,13 +70,18 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Co
 
         @Override
         public void onClick(View v) {
-            if (clickListener != null) {
-                clickListener.itemClick(v, getPosition());
+            if (clickListenerTrending != null) {
+                clickListenerTrending.itemClickTrending(v, getLayoutPosition());
+            }
+
+            if (clickListenerNew != null) {
+                clickListenerNew.itemClickNew(v, getLayoutPosition());
             }
         }
     }
 
     public interface ClickListener {
-        public void itemClick (View view, int position);
+        public void itemClickTrending (View view, int position);
+        public void itemClickNew (View view, int position);
     }
 }

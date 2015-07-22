@@ -43,7 +43,7 @@ public class GuestHomeActivity extends ActionBarActivity implements CourseItemAd
         tLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         tRecycler.setLayoutManager(tLinearLayout);
         tAdapter = new CourseItemAdapter(this, getTrendingCourseData());
-        tAdapter.setClickListener(this);
+        tAdapter.setClickListenerTrending(this);
         tRecycler.setAdapter(tAdapter);
 
         nRecycler = (RecyclerView) findViewById(R.id.new_courses);
@@ -52,13 +52,14 @@ public class GuestHomeActivity extends ActionBarActivity implements CourseItemAd
         nLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         nRecycler.setLayoutManager(nLinearLayout);
         nAdapter = new CourseItemAdapter(this, getNewCourseData());
+        nAdapter.setClickListenerNew(this);
         nRecycler.setAdapter(nAdapter);
     }
 
     private List<CourseItem> getNewCourseData() {
         List<CourseItem> data = new ArrayList<>();
-        int[] icons = {R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm};
-        String[] titles = {"Land Preparation", "Corn Foraging", "Corn Diseases", "Corn Pest", "Corn Processing"};
+        int[] icons = {R.drawable.nodata, R.drawable.nodata, R.drawable.nodata};
+        String[] titles = {"Land Preparation", "Corn Foraging", "Corn Diseases"};
 
         for (int i=0; i<titles.length && i<icons.length; i++) {
             CourseItem current = new CourseItem();
@@ -71,8 +72,8 @@ public class GuestHomeActivity extends ActionBarActivity implements CourseItemAd
 
     private List<CourseItem> getTrendingCourseData() {
         List<CourseItem> data = new ArrayList<>();
-        int[] icons = {R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm};
-        String[] titles = {"Corn Processing", "Corn Pest", "Corn Diseases", "Corn Foraging", "Land Preparation"};
+        int[] icons = {R.drawable.cornprocessing, R.drawable.nodata, R.drawable.nodata};
+        String[] titles = {"Corn Processing", "Corn Pest", "Corn Diseases"};
 
         for (int i=0; i<titles.length && i<icons.length; i++) {
             CourseItem current = new CourseItem();
@@ -111,10 +112,24 @@ public class GuestHomeActivity extends ActionBarActivity implements CourseItemAd
         startActivity(guestTrending);
     }
 
+    public void redirectNew(View view){
+        Intent guestNew = new Intent(this, GuestNewActivity.class);
+        startActivity(guestNew);
+    }
+
     @Override
-    public void itemClick(View view, int position) {
+    public void itemClickTrending(View view, int position) {
         if(position == 0){
             startActivity(new Intent(this, GuestCourseTrackActivity.class));
         }
+        else{
+            startActivity(new Intent(this, GuestNoDataActivity.class));
+        }
     }
+
+    @Override
+    public void itemClickNew(View view, int position) {
+        startActivity(new Intent(this, GuestNoDataActivity.class));
+    }
+
 }

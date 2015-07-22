@@ -1,5 +1,6 @@
 package com.example.myka.eskwelanisarai;
 
+import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -8,12 +9,13 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class GuestTrendingActivity extends ActionBarActivity {
+public class GuestTrendingActivity extends ActionBarActivity implements CourseItemAllAdapter.ClickListener{
 
     private RecyclerView tRecycler;
     private CourseItemAllAdapter tAdapter;
@@ -37,12 +39,13 @@ public class GuestTrendingActivity extends ActionBarActivity {
         tLinearLayout.setOrientation(LinearLayoutManager.VERTICAL);
         tRecycler.setLayoutManager(tLinearLayout);
         tAdapter = new CourseItemAllAdapter(this, getCourseData());
+        tAdapter.setClickListener(this);
         tRecycler.setAdapter(tAdapter);
     }
 
     private List<CourseItemAll> getCourseData() {
         List<CourseItemAll> data = new ArrayList<>();
-        int[] icons = {R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm, R.drawable.smallfarm};
+        int[] icons = {R.drawable.cornprocessing, R.drawable.nodata, R.drawable.nodata, R.drawable.nodata, R.drawable.nodata, R.drawable.nodata};
         String[] titles = {"Corn Processing", "Corn Pest", "Corn Diseases", "Corn Foraging", "Land Preparation", "Corn Stages"};
         String[] sDescription = {"This module discusses corn and its co-product processing.",
                 "This module discusses corn pests and their management.",
@@ -83,5 +86,15 @@ public class GuestTrendingActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void itemClick(View view, int position) {
+        if(position == 0){
+            startActivity(new Intent(this, GuestCourseTrackActivity.class));
+        }
+        else{
+            startActivity(new Intent(this, GuestNoDataActivity.class));
+        }
     }
 }

@@ -1,0 +1,257 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/trainee_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightColor"
+        tools:context="com.example.myka.eskwelanisarai.Sample1QuizActivity">
+
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar" />
+
+        <LinearLayout
+            android:id="@+id/question_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_bar"
+            android:layout_margin="16dp"
+            android:background="@color/lightGray"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:paddingLeft="16dp"
+                android:text="1. It contains a hard and starchy endosperm."
+                android:textSize="12sp" />
+
+
+            <RadioGroup
+                android:id="@+id/item1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/dent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:text="Dent Corn" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dent"
+                        android:layout_marginLeft="32dp"
+                        android:text="Flint Corn" />
+
+                    <RadioButton
+                        android:id="@+id/waxy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_toRightOf="@id/dent"
+                        android:text="Waxy Corn" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/waxy"
+                        android:layout_marginLeft="32dp"
+                        android:layout_toRightOf="@id/dent"
+                        android:text="Popcorn" />
+
+                </RelativeLayout>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:paddingLeft="16dp"
+                android:text="2. It contains small ears and small, rounded, pointed corners."
+                android:textSize="12sp" />
+
+
+            <RadioGroup
+                android:id="@+id/item2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/flint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:text="Flint Corn" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/flint"
+                        android:layout_marginLeft="32dp"
+                        android:text="Dent Corn" />
+
+                    <RadioButton
+                        android:id="@+id/pop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_toRightOf="@id/flint"
+                        android:text="Popcorn" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pop"
+                        android:layout_marginLeft="32dp"
+                        android:layout_toRightOf="@id/flint"
+                        android:text="Waxy Corn" />
+
+                </RelativeLayout>
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:paddingLeft="16dp"
+                android:text="3. It contains high amount of sugar during the milk stage of the kernel."
+                android:textSize="12sp" />
+
+            <RadioGroup
+                android:id="@+id/item3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/sweet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:text="Sweet Corn" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/sweet"
+                        android:layout_marginLeft="32dp"
+                        android:text="Dent Corn" />
+
+                    <RadioButton
+                        android:id="@+id/pop2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_toRightOf="@id/sweet"
+                        android:text="Popcorn" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pop2"
+                        android:layout_marginLeft="32dp"
+                        android:layout_toRightOf="@id/sweet"
+                        android:text="Waxy Corn" />
+
+                </RelativeLayout>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:paddingLeft="16dp"
+                android:text="4. It is the source of protein and energy for the germinating seed."
+                android:textSize="12sp" />
+
+            <RadioGroup
+                android:id="@+id/item4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/endosperm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:text="Endosperm" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/endosperm"
+                        android:layout_marginLeft="32dp"
+                        android:text="Germ" />
+
+                    <RadioButton
+                        android:id="@+id/pericarp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_toRightOf="@id/endosperm"
+                        android:text="Pericarp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pericarp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_toRightOf="@id/endosperm"
+                        android:text="Waxy Corn" />
+
+                </RelativeLayout>
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/question_form"
+            android:layout_margin="16dp"
+            android:background="@color/primaryColor"
+            android:text="Submit"
+            android:textColor="@color/lightColor"
+            android:textSize="8sp" />
+
+    </RelativeLayout>
+</android.support.v4.widget.DrawerLayout>
+
+
+
+
+
+

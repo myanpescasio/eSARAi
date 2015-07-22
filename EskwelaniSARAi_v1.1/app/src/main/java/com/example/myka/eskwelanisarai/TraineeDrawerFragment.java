@@ -70,7 +70,7 @@ public class TraineeDrawerFragment extends Fragment implements CustomDrawerAdapt
     public static List<CustomDrawerItem> getTraineeData () {
         List<CustomDrawerItem> data = new ArrayList<>();
         int[] icons = {R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp};
-        String[] titles = {"HOME", "TRENDING", "NEW", "MY COURSES", "SETTINGS", "CONTACT US", "LOG OUT"};
+        String[] titles = {"HOME", "TRENDING", "NEW", "MY COURSES", "SETTINGS", "LOG OUT"};
 
         for (int i=0; i<titles.length && i<icons.length; i++) {
             CustomDrawerItem current = new CustomDrawerItem();
@@ -139,10 +139,6 @@ public class TraineeDrawerFragment extends Fragment implements CustomDrawerAdapt
         //Settings
         else if(position == 4){
             //Settings
-        }
-        //Contact Us
-        else if(position == 5){
-            //Contact Us
         }
         //Log Out
         else if(position == 6){

@@ -14,7 +14,7 @@
         android:layout_height="140dp"
         android:layout_below="@id/app_bar"
         android:scaleType="centerCrop"
-        android:src="@drawable/wheatfield" />
+        android:src="@drawable/saraibanner2" />
 
     <LinearLayout
         android:layout_width="match_parent"

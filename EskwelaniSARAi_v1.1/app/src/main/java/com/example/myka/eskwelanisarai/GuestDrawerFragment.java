@@ -71,7 +71,7 @@ public class GuestDrawerFragment extends Fragment implements CustomDrawerAdapter
     public static List<CustomDrawerItem> getGuestData () {
         List<CustomDrawerItem> data = new ArrayList<>();
         int[] icons = {R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp, R.drawable.temp};
-        String[] titles = {"HOME", "TRENDING", "NEW", "CONTACT US", "LOG IN"};
+        String[] titles = {"HOME", "TRENDING", "NEW", "LOG IN"};
 
         for (int i=0; i<titles.length && i<icons.length; i++) {
             CustomDrawerItem current = new CustomDrawerItem();
@@ -134,12 +134,8 @@ public class GuestDrawerFragment extends Fragment implements CustomDrawerAdapter
         else if(position == 2){
             //New
         }
-        //Contact Us
-        else if(position == 3){
-            //Contact Us
-        }
         //Log In
-        else if(position == 4){
+        else if(position == 3){
             startActivity(new Intent(getActivity(), LoginActivity.class));
         }
     }

@@ -18,10 +18,17 @@ public class CourseOutlineItemAdapter extends RecyclerView.Adapter<CourseOutline
     List<CourseOutlineItem> data = Collections.emptyList();
     private LayoutInflater inflater;
 
+    ClickListener clickListener;
+
     public CourseOutlineItemAdapter (Context context, List<CourseOutlineItem> data) {
         inflater = LayoutInflater.from(context);
         this.data = data;
     }
+
+    public void setClickListener (ClickListener clickListener){
+        this.clickListener = clickListener;
+    }
+
 
     @Override
     public OutlineViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -43,16 +50,27 @@ public class CourseOutlineItemAdapter extends RecyclerView.Adapter<CourseOutline
         return data.size();
     }
 
-    public class OutlineViewHolder extends RecyclerView.ViewHolder{
+    public class OutlineViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView icon;
         TextView title;
 
         public OutlineViewHolder(View itemView) {
             super(itemView);
-
+            itemView.setOnClickListener(this);
             title = (TextView) itemView.findViewById(R.id.outline_item_title);
             icon = (ImageView) itemView.findViewById(R.id.outline_item_icon);
         }
+
+        @Override
+        public void onClick(View v) {
+            if(clickListener != null){
+                clickListener.itemClick(v, getLayoutPosition());
+            }
+        }
+    }
+
+    public interface ClickListener {
+        public void itemClick(View view, int position);
     }
 }

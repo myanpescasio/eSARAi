@@ -11,14 +11,15 @@
     <ImageView
         android:id="@+id/outline_item_icon"
         android:layout_width="32dp"
-        android:layout_height="24dp"
+        android:layout_height="16dp"
         android:layout_gravity="center_vertical"
-        android:src="@drawable/temp"/>
+        android:src="@drawable/question"/>
 
     <TextView
         android:id="@+id/outline_item_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:padding="8dp"
         android:textSize="16sp"
         android:text="This is a Sub-Course" />

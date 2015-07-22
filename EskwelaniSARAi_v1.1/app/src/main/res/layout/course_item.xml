@@ -10,7 +10,7 @@
         android:id="@+id/course_screenshot"
         android:layout_width="160dp"
         android:layout_height="100dp"
-        android:src="@drawable/smallfarm"/>
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/course_title"

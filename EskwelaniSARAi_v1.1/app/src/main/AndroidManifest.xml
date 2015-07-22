@@ -72,6 +72,54 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.myka.eskwelanisarai.GuestHomeActivity" />
         </activity>
+        <activity
+            android:name=".GuestNoDataActivity"
+            android:label="@string/title_activity_guest_no_data"
+            android:parentActivityName=".GuestHomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myka.eskwelanisarai.GuestHomeActivity" />
+        </activity>
+        <activity
+            android:name=".TraineeNoDataActivity"
+            android:label="@string/title_activity_trainee_no_data"
+            android:parentActivityName=".TraineeHomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myka.eskwelanisarai.TraineeHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Sample1Activity"
+            android:label="@string/title_activity_sample1"
+            android:parentActivityName=".TraineeHomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myka.eskwelanisarai.TraineeHomeActivity" />
+        </activity>
+        <activity
+            android:name=".GuestNewActivity"
+            android:label="@string/title_activity_guest_new"
+            android:parentActivityName=".GuestHomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myka.eskwelanisarai.GuestHomeActivity" />
+        </activity>
+        <activity
+            android:name=".TraineeNewActivity"
+            android:label="@string/title_activity_trainee_new"
+            android:parentActivityName=".TraineeHomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myka.eskwelanisarai.TraineeHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Sample1QuizActivity"
+            android:label="@string/title_activity_sample1_quiz"
+            android:parentActivityName=".Sample1Activity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myka.eskwelanisarai.Sample1Activity" />
+        </activity>
     </application>
 
 </manifest> <!-- Slidenerd's videos from youtube was the reference for most of Material Designs Theme used in this application. -->
